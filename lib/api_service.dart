@@ -2,12 +2,10 @@ import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
 
-const baseURL = 'https://www.googleapis.com/books/v1';
-
 Future<Book> getBooks(String keyword) async {
-  var url = 'https://www.googleapis.com/books/v1/volumes?q=$keyword';
+  Uri url = 'https://www.googleapis.com/books/v1/volumes?q=$keyword' as Uri;
 
-  final response = await http.get(url);
+  http.Response response = await http.get(url);
   if (response.statusCode == 200) {
     return Book.fromJson(convert.jsonDecode(response.body));
   } else {
