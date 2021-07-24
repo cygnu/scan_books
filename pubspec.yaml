@@ -11,13 +11,21 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   cupertino_icons: ^1.0.2
   flutter_barcode_scanner: ^2.0.0
+  freezed_annotation: ^0.14.2
   http: ^0.13.3
+  state_notifier: ^0.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+  build_runner: ^2.0.5
+  freezed: ^0.14.2
+  json_serializable: ^4.1.4
 
 flutter:
 
