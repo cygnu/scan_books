@@ -12,7 +12,7 @@ class GoogleBookResponse with _$GoogleBookResponse {
     required String kind,
     required String id,
     required String etag,
-    GoogleBookVolumeInfoResponse volumeInfo,
+    required GoogleBookVolumeInfoResponse volumeInfo,
     required int totalItems,
   }) = _GoogleBookResponse;
   factory GoogleBookResponse.fromJson(Map<String, dynamic> json) =>

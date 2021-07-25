@@ -11,7 +11,7 @@ class GoogleBooksResponse with _$GoogleBooksResponse {
   const factory GoogleBooksResponse({
     required String kind,
     required int totalItems,
-    List<GoogleBookResponse> items,
+    required List<GoogleBookResponse> items,
   }) = _GoogleBooksResponse;
   factory GoogleBooksResponse.fromJson(Map<String, dynamic> json) =>
       _$GoogleBooksResponseFromJson(json);
