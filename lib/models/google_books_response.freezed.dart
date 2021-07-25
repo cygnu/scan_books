@@ -21,8 +21,8 @@ class _$GoogleBooksResponseTearOff {
   const _$GoogleBooksResponseTearOff();
 
   _GoogleBooksResponse call(
-      {required String kind,
-      required int totalItems,
+      {String? kind,
+      int? totalItems,
       required List<GoogleBookResponse> items}) {
     return _GoogleBooksResponse(
       kind: kind,
@@ -41,8 +41,8 @@ const $GoogleBooksResponse = _$GoogleBooksResponseTearOff();
 
 /// @nodoc
 mixin _$GoogleBooksResponse {
-  String get kind => throw _privateConstructorUsedError;
-  int get totalItems => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
+  int? get totalItems => throw _privateConstructorUsedError;
   List<GoogleBookResponse> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ abstract class $GoogleBooksResponseCopyWith<$Res> {
   factory $GoogleBooksResponseCopyWith(
           GoogleBooksResponse value, $Res Function(GoogleBooksResponse) then) =
       _$GoogleBooksResponseCopyWithImpl<$Res>;
-  $Res call({String kind, int totalItems, List<GoogleBookResponse> items});
+  $Res call({String? kind, int? totalItems, List<GoogleBookResponse> items});
 }
 
 /// @nodoc
@@ -78,11 +78,11 @@ class _$GoogleBooksResponseCopyWithImpl<$Res>
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       totalItems: totalItems == freezed
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -98,7 +98,7 @@ abstract class _$GoogleBooksResponseCopyWith<$Res>
           $Res Function(_GoogleBooksResponse) then) =
       __$GoogleBooksResponseCopyWithImpl<$Res>;
   @override
-  $Res call({String kind, int totalItems, List<GoogleBookResponse> items});
+  $Res call({String? kind, int? totalItems, List<GoogleBookResponse> items});
 }
 
 /// @nodoc
@@ -122,11 +122,11 @@ class __$GoogleBooksResponseCopyWithImpl<$Res>
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       totalItems: totalItems == freezed
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -140,16 +140,16 @@ class __$GoogleBooksResponseCopyWithImpl<$Res>
 class _$_GoogleBooksResponse extends _GoogleBooksResponse
     with DiagnosticableTreeMixin {
   const _$_GoogleBooksResponse(
-      {required this.kind, required this.totalItems, required this.items})
+      {this.kind, this.totalItems, required this.items})
       : super._();
 
   factory _$_GoogleBooksResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GoogleBooksResponseFromJson(json);
 
   @override
-  final String kind;
+  final String? kind;
   @override
-  final int totalItems;
+  final int? totalItems;
   @override
   final List<GoogleBookResponse> items;
 
@@ -202,8 +202,8 @@ class _$_GoogleBooksResponse extends _GoogleBooksResponse
 
 abstract class _GoogleBooksResponse extends GoogleBooksResponse {
   const factory _GoogleBooksResponse(
-      {required String kind,
-      required int totalItems,
+      {String? kind,
+      int? totalItems,
       required List<GoogleBookResponse> items}) = _$_GoogleBooksResponse;
   const _GoogleBooksResponse._() : super._();
 
@@ -211,9 +211,9 @@ abstract class _GoogleBooksResponse extends GoogleBooksResponse {
       _$_GoogleBooksResponse.fromJson;
 
   @override
-  String get kind => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
   @override
-  int get totalItems => throw _privateConstructorUsedError;
+  int? get totalItems => throw _privateConstructorUsedError;
   @override
   List<GoogleBookResponse> get items => throw _privateConstructorUsedError;
   @override

@@ -9,12 +9,12 @@ part of 'google_book_response.dart';
 _$_GoogleBookResponse _$_$_GoogleBookResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GoogleBookResponse(
-    kind: json['kind'] as String,
-    id: json['id'] as String,
-    etag: json['etag'] as String,
+    kind: json['kind'] as String?,
+    id: json['id'] as String?,
+    etag: json['etag'] as String?,
     volumeInfo: GoogleBookVolumeInfoResponse.fromJson(
         json['volumeInfo'] as Map<String, dynamic>),
-    totalItems: json['totalItems'] as int,
+    totalItems: json['totalItems'] as int?,
   );
 }
 

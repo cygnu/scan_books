@@ -10,17 +10,17 @@ _$_GoogleBookVolumeInfoResponse _$_$_GoogleBookVolumeInfoResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GoogleBookVolumeInfoResponse(
     title: json['title'] as String,
-    publisher: json['publisher'] as String,
-    publishedDate: json['publishedDate'] as String,
-    description: json['description'] as String,
+    publisher: json['publisher'] as String?,
+    publishedDate: json['publishedDate'] as String?,
+    description: json['description'] as String?,
     industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>)
         .map((e) => GoogleBookIndustryIdentifiersResponse.fromJson(
             e as Map<String, dynamic>))
         .toList(),
-    pageCount: json['pageCount'] as int,
+    pageCount: json['pageCount'] as int?,
     imageLinks: GoogleBookImageLinksResponse.fromJson(
         json['imageLinks'] as Map<String, dynamic>),
-    infoLink: json['infoLink'] as String,
+    infoLink: json['infoLink'] as String?,
   );
 }
 

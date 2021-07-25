@@ -21,11 +21,11 @@ class _$GoogleBookResponseTearOff {
   const _$GoogleBookResponseTearOff();
 
   _GoogleBookResponse call(
-      {required String kind,
-      required String id,
-      required String etag,
+      {String? kind,
+      String? id,
+      String? etag,
       required GoogleBookVolumeInfoResponse volumeInfo,
-      required int totalItems}) {
+      int? totalItems}) {
     return _GoogleBookResponse(
       kind: kind,
       id: id,
@@ -45,12 +45,12 @@ const $GoogleBookResponse = _$GoogleBookResponseTearOff();
 
 /// @nodoc
 mixin _$GoogleBookResponse {
-  String get kind => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String get etag => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get etag => throw _privateConstructorUsedError;
   GoogleBookVolumeInfoResponse get volumeInfo =>
       throw _privateConstructorUsedError;
-  int get totalItems => throw _privateConstructorUsedError;
+  int? get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,11 +64,11 @@ abstract class $GoogleBookResponseCopyWith<$Res> {
           GoogleBookResponse value, $Res Function(GoogleBookResponse) then) =
       _$GoogleBookResponseCopyWithImpl<$Res>;
   $Res call(
-      {String kind,
-      String id,
-      String etag,
+      {String? kind,
+      String? id,
+      String? etag,
       GoogleBookVolumeInfoResponse volumeInfo,
-      int totalItems});
+      int? totalItems});
 
   $GoogleBookVolumeInfoResponseCopyWith<$Res> get volumeInfo;
 }
@@ -94,15 +94,15 @@ class _$GoogleBookResponseCopyWithImpl<$Res>
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       etag: etag == freezed
           ? _value.etag
           : etag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
           : volumeInfo // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ class _$GoogleBookResponseCopyWithImpl<$Res>
       totalItems: totalItems == freezed
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 
@@ -131,11 +131,11 @@ abstract class _$GoogleBookResponseCopyWith<$Res>
       __$GoogleBookResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String kind,
-      String id,
-      String etag,
+      {String? kind,
+      String? id,
+      String? etag,
       GoogleBookVolumeInfoResponse volumeInfo,
-      int totalItems});
+      int? totalItems});
 
   @override
   $GoogleBookVolumeInfoResponseCopyWith<$Res> get volumeInfo;
@@ -164,15 +164,15 @@ class __$GoogleBookResponseCopyWithImpl<$Res>
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       etag: etag == freezed
           ? _value.etag
           : etag // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
           : volumeInfo // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ class __$GoogleBookResponseCopyWithImpl<$Res>
       totalItems: totalItems == freezed
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -190,26 +190,26 @@ class __$GoogleBookResponseCopyWithImpl<$Res>
 class _$_GoogleBookResponse extends _GoogleBookResponse
     with DiagnosticableTreeMixin {
   const _$_GoogleBookResponse(
-      {required this.kind,
-      required this.id,
-      required this.etag,
+      {this.kind,
+      this.id,
+      this.etag,
       required this.volumeInfo,
-      required this.totalItems})
+      this.totalItems})
       : super._();
 
   factory _$_GoogleBookResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GoogleBookResponseFromJson(json);
 
   @override
-  final String kind;
+  final String? kind;
   @override
-  final String id;
+  final String? id;
   @override
-  final String etag;
+  final String? etag;
   @override
   final GoogleBookVolumeInfoResponse volumeInfo;
   @override
-  final int totalItems;
+  final int? totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -268,27 +268,27 @@ class _$_GoogleBookResponse extends _GoogleBookResponse
 
 abstract class _GoogleBookResponse extends GoogleBookResponse {
   const factory _GoogleBookResponse(
-      {required String kind,
-      required String id,
-      required String etag,
+      {String? kind,
+      String? id,
+      String? etag,
       required GoogleBookVolumeInfoResponse volumeInfo,
-      required int totalItems}) = _$_GoogleBookResponse;
+      int? totalItems}) = _$_GoogleBookResponse;
   const _GoogleBookResponse._() : super._();
 
   factory _GoogleBookResponse.fromJson(Map<String, dynamic> json) =
       _$_GoogleBookResponse.fromJson;
 
   @override
-  String get kind => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get etag => throw _privateConstructorUsedError;
+  String? get etag => throw _privateConstructorUsedError;
   @override
   GoogleBookVolumeInfoResponse get volumeInfo =>
       throw _privateConstructorUsedError;
   @override
-  int get totalItems => throw _privateConstructorUsedError;
+  int? get totalItems => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$GoogleBookResponseCopyWith<_GoogleBookResponse> get copyWith =>

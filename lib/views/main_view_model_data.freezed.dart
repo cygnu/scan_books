@@ -21,8 +21,7 @@ class _$MainViewModelDataTearOff {
   const _$MainViewModelDataTearOff();
 
   _MainViewModelData call(
-      {required GoogleBooksResponse response,
-      required MainViewModelState viewModelState}) {
+      {GoogleBooksResponse? response, MainViewModelState? viewModelState}) {
     return _MainViewModelData(
       response: response,
       viewModelState: viewModelState,
@@ -39,8 +38,8 @@ const $MainViewModelData = _$MainViewModelDataTearOff();
 
 /// @nodoc
 mixin _$MainViewModelData {
-  GoogleBooksResponse get response => throw _privateConstructorUsedError;
-  MainViewModelState get viewModelState => throw _privateConstructorUsedError;
+  GoogleBooksResponse? get response => throw _privateConstructorUsedError;
+  MainViewModelState? get viewModelState => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,9 +52,10 @@ abstract class $MainViewModelDataCopyWith<$Res> {
   factory $MainViewModelDataCopyWith(
           MainViewModelData value, $Res Function(MainViewModelData) then) =
       _$MainViewModelDataCopyWithImpl<$Res>;
-  $Res call({GoogleBooksResponse response, MainViewModelState viewModelState});
+  $Res call(
+      {GoogleBooksResponse? response, MainViewModelState? viewModelState});
 
-  $GoogleBooksResponseCopyWith<$Res> get response;
+  $GoogleBooksResponseCopyWith<$Res>? get response;
 }
 
 /// @nodoc
@@ -76,17 +76,21 @@ class _$MainViewModelDataCopyWithImpl<$Res>
       response: response == freezed
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as GoogleBooksResponse,
+              as GoogleBooksResponse?,
       viewModelState: viewModelState == freezed
           ? _value.viewModelState
           : viewModelState // ignore: cast_nullable_to_non_nullable
-              as MainViewModelState,
+              as MainViewModelState?,
     ));
   }
 
   @override
-  $GoogleBooksResponseCopyWith<$Res> get response {
-    return $GoogleBooksResponseCopyWith<$Res>(_value.response, (value) {
+  $GoogleBooksResponseCopyWith<$Res>? get response {
+    if (_value.response == null) {
+      return null;
+    }
+
+    return $GoogleBooksResponseCopyWith<$Res>(_value.response!, (value) {
       return _then(_value.copyWith(response: value));
     });
   }
@@ -99,10 +103,11 @@ abstract class _$MainViewModelDataCopyWith<$Res>
           _MainViewModelData value, $Res Function(_MainViewModelData) then) =
       __$MainViewModelDataCopyWithImpl<$Res>;
   @override
-  $Res call({GoogleBooksResponse response, MainViewModelState viewModelState});
+  $Res call(
+      {GoogleBooksResponse? response, MainViewModelState? viewModelState});
 
   @override
-  $GoogleBooksResponseCopyWith<$Res> get response;
+  $GoogleBooksResponseCopyWith<$Res>? get response;
 }
 
 /// @nodoc
@@ -125,11 +130,11 @@ class __$MainViewModelDataCopyWithImpl<$Res>
       response: response == freezed
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as GoogleBooksResponse,
+              as GoogleBooksResponse?,
       viewModelState: viewModelState == freezed
           ? _value.viewModelState
           : viewModelState // ignore: cast_nullable_to_non_nullable
-              as MainViewModelState,
+              as MainViewModelState?,
     ));
   }
 }
@@ -138,17 +143,15 @@ class __$MainViewModelDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MainViewModelData extends _MainViewModelData
     with DiagnosticableTreeMixin {
-  const _$_MainViewModelData(
-      {required this.response, required this.viewModelState})
-      : super._();
+  const _$_MainViewModelData({this.response, this.viewModelState}) : super._();
 
   factory _$_MainViewModelData.fromJson(Map<String, dynamic> json) =>
       _$_$_MainViewModelDataFromJson(json);
 
   @override
-  final GoogleBooksResponse response;
+  final GoogleBooksResponse? response;
   @override
-  final MainViewModelState viewModelState;
+  final MainViewModelState? viewModelState;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -195,17 +198,17 @@ class _$_MainViewModelData extends _MainViewModelData
 
 abstract class _MainViewModelData extends MainViewModelData {
   const factory _MainViewModelData(
-      {required GoogleBooksResponse response,
-      required MainViewModelState viewModelState}) = _$_MainViewModelData;
+      {GoogleBooksResponse? response,
+      MainViewModelState? viewModelState}) = _$_MainViewModelData;
   const _MainViewModelData._() : super._();
 
   factory _MainViewModelData.fromJson(Map<String, dynamic> json) =
       _$_MainViewModelData.fromJson;
 
   @override
-  GoogleBooksResponse get response => throw _privateConstructorUsedError;
+  GoogleBooksResponse? get response => throw _privateConstructorUsedError;
   @override
-  MainViewModelState get viewModelState => throw _privateConstructorUsedError;
+  MainViewModelState? get viewModelState => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MainViewModelDataCopyWith<_MainViewModelData> get copyWith =>

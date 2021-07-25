@@ -23,13 +23,13 @@ class _$GoogleBookVolumeInfoResponseTearOff {
 
   _GoogleBookVolumeInfoResponse call(
       {required String title,
-      required String publisher,
-      required String publishedDate,
-      required String description,
+      String? publisher,
+      String? publishedDate,
+      String? description,
       required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
-      required int pageCount,
+      int? pageCount,
       required GoogleBookImageLinksResponse imageLinks,
-      required String infoLink}) {
+      String? infoLink}) {
     return _GoogleBookVolumeInfoResponse(
       title: title,
       publisher: publisher,
@@ -53,15 +53,15 @@ const $GoogleBookVolumeInfoResponse = _$GoogleBookVolumeInfoResponseTearOff();
 /// @nodoc
 mixin _$GoogleBookVolumeInfoResponse {
   String get title => throw _privateConstructorUsedError;
-  String get publisher => throw _privateConstructorUsedError;
-  String get publishedDate => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get publisher => throw _privateConstructorUsedError;
+  String? get publishedDate => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   List<GoogleBookIndustryIdentifiersResponse> get industryIdentifiers =>
       throw _privateConstructorUsedError;
-  int get pageCount => throw _privateConstructorUsedError;
+  int? get pageCount => throw _privateConstructorUsedError;
   GoogleBookImageLinksResponse get imageLinks =>
       throw _privateConstructorUsedError;
-  String get infoLink => throw _privateConstructorUsedError;
+  String? get infoLink => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -77,13 +77,13 @@ abstract class $GoogleBookVolumeInfoResponseCopyWith<$Res> {
       _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>;
   $Res call(
       {String title,
-      String publisher,
-      String publishedDate,
-      String description,
+      String? publisher,
+      String? publishedDate,
+      String? description,
       List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
-      int pageCount,
+      int? pageCount,
       GoogleBookImageLinksResponse imageLinks,
-      String infoLink});
+      String? infoLink});
 
   $GoogleBookImageLinksResponseCopyWith<$Res> get imageLinks;
 }
@@ -116,15 +116,15 @@ class _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       publisher: publisher == freezed
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedDate: publishedDate == freezed
           ? _value.publishedDate
           : publishedDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       industryIdentifiers: industryIdentifiers == freezed
           ? _value.industryIdentifiers
           : industryIdentifiers // ignore: cast_nullable_to_non_nullable
@@ -132,7 +132,7 @@ class _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       pageCount: pageCount == freezed
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       imageLinks: imageLinks == freezed
           ? _value.imageLinks
           : imageLinks // ignore: cast_nullable_to_non_nullable
@@ -140,7 +140,7 @@ class _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       infoLink: infoLink == freezed
           ? _value.infoLink
           : infoLink // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 
@@ -163,13 +163,13 @@ abstract class _$GoogleBookVolumeInfoResponseCopyWith<$Res>
   @override
   $Res call(
       {String title,
-      String publisher,
-      String publishedDate,
-      String description,
+      String? publisher,
+      String? publishedDate,
+      String? description,
       List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
-      int pageCount,
+      int? pageCount,
       GoogleBookImageLinksResponse imageLinks,
-      String infoLink});
+      String? infoLink});
 
   @override
   $GoogleBookImageLinksResponseCopyWith<$Res> get imageLinks;
@@ -207,15 +207,15 @@ class __$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       publisher: publisher == freezed
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedDate: publishedDate == freezed
           ? _value.publishedDate
           : publishedDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       industryIdentifiers: industryIdentifiers == freezed
           ? _value.industryIdentifiers
           : industryIdentifiers // ignore: cast_nullable_to_non_nullable
@@ -223,7 +223,7 @@ class __$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       pageCount: pageCount == freezed
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       imageLinks: imageLinks == freezed
           ? _value.imageLinks
           : imageLinks // ignore: cast_nullable_to_non_nullable
@@ -231,7 +231,7 @@ class __$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       infoLink: infoLink == freezed
           ? _value.infoLink
           : infoLink // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -242,13 +242,13 @@ class _$_GoogleBookVolumeInfoResponse extends _GoogleBookVolumeInfoResponse
     with DiagnosticableTreeMixin {
   const _$_GoogleBookVolumeInfoResponse(
       {required this.title,
-      required this.publisher,
-      required this.publishedDate,
-      required this.description,
+      this.publisher,
+      this.publishedDate,
+      this.description,
       required this.industryIdentifiers,
-      required this.pageCount,
+      this.pageCount,
       required this.imageLinks,
-      required this.infoLink})
+      this.infoLink})
       : super._();
 
   factory _$_GoogleBookVolumeInfoResponse.fromJson(Map<String, dynamic> json) =>
@@ -257,19 +257,19 @@ class _$_GoogleBookVolumeInfoResponse extends _GoogleBookVolumeInfoResponse
   @override
   final String title;
   @override
-  final String publisher;
+  final String? publisher;
   @override
-  final String publishedDate;
+  final String? publishedDate;
   @override
-  final String description;
+  final String? description;
   @override
   final List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers;
   @override
-  final int pageCount;
+  final int? pageCount;
   @override
   final GoogleBookImageLinksResponse imageLinks;
   @override
-  final String infoLink;
+  final String? infoLink;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -348,13 +348,13 @@ abstract class _GoogleBookVolumeInfoResponse
     extends GoogleBookVolumeInfoResponse {
   const factory _GoogleBookVolumeInfoResponse(
       {required String title,
-      required String publisher,
-      required String publishedDate,
-      required String description,
+      String? publisher,
+      String? publishedDate,
+      String? description,
       required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
-      required int pageCount,
+      int? pageCount,
       required GoogleBookImageLinksResponse imageLinks,
-      required String infoLink}) = _$_GoogleBookVolumeInfoResponse;
+      String? infoLink}) = _$_GoogleBookVolumeInfoResponse;
   const _GoogleBookVolumeInfoResponse._() : super._();
 
   factory _GoogleBookVolumeInfoResponse.fromJson(Map<String, dynamic> json) =
@@ -363,21 +363,21 @@ abstract class _GoogleBookVolumeInfoResponse
   @override
   String get title => throw _privateConstructorUsedError;
   @override
-  String get publisher => throw _privateConstructorUsedError;
+  String? get publisher => throw _privateConstructorUsedError;
   @override
-  String get publishedDate => throw _privateConstructorUsedError;
+  String? get publishedDate => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
   List<GoogleBookIndustryIdentifiersResponse> get industryIdentifiers =>
       throw _privateConstructorUsedError;
   @override
-  int get pageCount => throw _privateConstructorUsedError;
+  int? get pageCount => throw _privateConstructorUsedError;
   @override
   GoogleBookImageLinksResponse get imageLinks =>
       throw _privateConstructorUsedError;
   @override
-  String get infoLink => throw _privateConstructorUsedError;
+  String? get infoLink => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$GoogleBookVolumeInfoResponseCopyWith<_GoogleBookVolumeInfoResponse>

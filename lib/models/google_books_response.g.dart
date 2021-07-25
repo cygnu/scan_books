@@ -9,8 +9,8 @@ part of 'google_books_response.dart';
 _$_GoogleBooksResponse _$_$_GoogleBooksResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GoogleBooksResponse(
-    kind: json['kind'] as String,
-    totalItems: json['totalItems'] as int,
+    kind: json['kind'] as String?,
+    totalItems: json['totalItems'] as int?,
     items: (json['items'] as List<dynamic>)
         .map((e) => GoogleBookResponse.fromJson(e as Map<String, dynamic>))
         .toList(),
