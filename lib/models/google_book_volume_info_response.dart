@@ -11,13 +11,13 @@ class GoogleBookVolumeInfoResponse with _$GoogleBookVolumeInfoResponse {
   const GoogleBookVolumeInfoResponse._();
   const factory GoogleBookVolumeInfoResponse({
     required String title,
-    required String publisher,
-    required String publishedDate,
-    required String description,
+    String? publisher,
+    String? publishedDate,
+    String? description,
     required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
-    required int pageCount,
+    int? pageCount,
     required GoogleBookImageLinksResponse imageLinks,
-    required String infoLink,
+    String? infoLink,
   }) = _GoogleBookVolumeInfoResponse;
   factory GoogleBookVolumeInfoResponse.fromJson(Map<String, dynamic> json) =>
       _$GoogleBookVolumeInfoResponseFromJson(json);

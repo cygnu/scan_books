@@ -9,11 +9,11 @@ part 'google_book_response.g.dart';
 class GoogleBookResponse with _$GoogleBookResponse {
   const GoogleBookResponse._();
   const factory GoogleBookResponse({
-    required String kind,
-    required String id,
-    required String etag,
+    String? kind,
+    String? id,
+    String? etag,
     required GoogleBookVolumeInfoResponse volumeInfo,
-    required int totalItems,
+    int? totalItems,
   }) = _GoogleBookResponse;
   factory GoogleBookResponse.fromJson(Map<String, dynamic> json) =>
       _$GoogleBookResponseFromJson(json);

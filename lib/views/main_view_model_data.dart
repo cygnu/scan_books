@@ -10,8 +10,8 @@ enum MainViewModelState { normal, loading, error }
 class MainViewModelData with _$MainViewModelData {
   const MainViewModelData._();
   const factory MainViewModelData({
-    required GoogleBooksResponse response,
-    required MainViewModelState viewModelState,
+    GoogleBooksResponse? response,
+    MainViewModelState? viewModelState,
   }) = _MainViewModelData;
   factory MainViewModelData.fromJson(Map<String, dynamic> json) =>
       _$MainViewModelDataFromJson(json);
