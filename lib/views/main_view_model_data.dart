@@ -13,6 +13,4 @@ class MainViewModelData with _$MainViewModelData {
     GoogleBooksResponse? response,
     MainViewModelState? viewModelState,
   }) = _MainViewModelData;
-  factory MainViewModelData.fromJson(Map<String, dynamic> json) =>
-      _$MainViewModelDataFromJson(json);
 }
