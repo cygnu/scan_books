@@ -12,10 +12,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MainViewModelData _$MainViewModelDataFromJson(Map<String, dynamic> json) {
-  return _MainViewModelData.fromJson(json);
-}
-
 /// @nodoc
 class _$MainViewModelDataTearOff {
   const _$MainViewModelDataTearOff();
@@ -27,10 +23,6 @@ class _$MainViewModelDataTearOff {
       viewModelState: viewModelState,
     );
   }
-
-  MainViewModelData fromJson(Map<String, Object> json) {
-    return MainViewModelData.fromJson(json);
-  }
 }
 
 /// @nodoc
@@ -41,7 +33,6 @@ mixin _$MainViewModelData {
   GoogleBooksResponse? get response => throw _privateConstructorUsedError;
   MainViewModelState? get viewModelState => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MainViewModelDataCopyWith<MainViewModelData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -140,13 +131,10 @@ class __$MainViewModelDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_MainViewModelData extends _MainViewModelData
     with DiagnosticableTreeMixin {
   const _$_MainViewModelData({this.response, this.viewModelState}) : super._();
-
-  factory _$_MainViewModelData.fromJson(Map<String, dynamic> json) =>
-      _$_$_MainViewModelDataFromJson(json);
 
   @override
   final GoogleBooksResponse? response;
@@ -189,11 +177,6 @@ class _$_MainViewModelData extends _MainViewModelData
   @override
   _$MainViewModelDataCopyWith<_MainViewModelData> get copyWith =>
       __$MainViewModelDataCopyWithImpl<_MainViewModelData>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_MainViewModelDataToJson(this);
-  }
 }
 
 abstract class _MainViewModelData extends MainViewModelData {
@@ -201,9 +184,6 @@ abstract class _MainViewModelData extends MainViewModelData {
       {GoogleBooksResponse? response,
       MainViewModelState? viewModelState}) = _$_MainViewModelData;
   const _MainViewModelData._() : super._();
-
-  factory _MainViewModelData.fromJson(Map<String, dynamic> json) =
-      _$_MainViewModelData.fromJson;
 
   @override
   GoogleBooksResponse? get response => throw _privateConstructorUsedError;
