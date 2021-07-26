@@ -1,19 +1,15 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:scanner/models/google_book_response.dart';
+import 'package:scanner/models/google_books_response.dart';
+import 'package:scanner/views/main_view_model.dart';
+import 'package:scanner/views/main_view_model_data.dart';
 
 void main() => runApp(ScanApp());
 
-class ScanApp extends StatefulWidget {
-  @override
-  _ScanAppState createState() => _ScanAppState();
-}
-
-class _ScanAppState extends State<ScanApp> {
-  String _scanBarcode = 'Unknown';
-
+class ScanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,17 +17,38 @@ class _ScanAppState extends State<ScanApp> {
         appBar: AppBar(
           title: Text('Barcode Scanner'),
         ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              TextButton(
-                child: Text('Scan'),
-                onPressed: () => scanBarcode(),
-              ),
-              Text('Result: $_scanBarcode\n'),
-            ],
-          ),
+        body: StateNotifierProvider<MainViewModel, MainViewModelData>(
+          create: (_) => MainViewModel(),
+          child: HomePage(),
         ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  final String _scanBarcode = 'Unknown';
+
+  @override
+  Widget build(BuildContext context) {
+    final response = context.select<MainViewModelData, GoogleBooksResponse>(
+        (data) => data.response);
+    final state = context.select<MainViewModelData, MainViewModelState>(
+        (data) => data.viewModelState);
+    final List<GoogleBookResponse> bookList =
+        response != null ? response.items : [];
+
+    return Container(
+      child: Column(
+        children: <Widget>[
+          TextButton(
+            child: Text('Scan'),
+            onPressed: () => scanBarcode(),
+          ),
+          Text('Result: $_scanBarcode\n'),
+        ],
       ),
     );
   }
