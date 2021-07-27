@@ -22,26 +22,26 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         flexibleSpace: FlexibleSpaceBar(
           title: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 0,
-              horizontal: 10.0,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
             child: TextField(
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: const BorderSide(color: Colors.grey),
                 ),
                 filled: true,
                 fillColor: Colors.white,
                 prefixIcon: Icon(Icons.search),
-                suffixIcon: Icon(Icons.photo_camera),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.photo_camera),
+                  onPressed: () => scanBarcode(),
+                ),
                 hintText: '検索',
               ),
               keyboardType: TextInputType.text,
@@ -57,10 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         child: Column(
           children: <Widget>[
-            TextButton(
-              child: Text('Scan'),
-              onPressed: () => scanBarcode(),
-            ),
             Text('Result: $_scanBarcode\n'),
           ],
         ),
