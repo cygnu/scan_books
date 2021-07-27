@@ -18,15 +18,52 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          TextButton(
-            child: Text('Scan'),
-            onPressed: () => scanBarcode(),
+    return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: FlexibleSpaceBar(
+          title: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 0,
+              horizontal: 10.0,
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 20.0),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Icon(Icons.search),
+                suffixIcon: Icon(Icons.photo_camera),
+                hintText: '検索',
+              ),
+              keyboardType: TextInputType.text,
+              onChanged: (String value) {
+                setState(() {
+                  print(value);
+                });
+              },
+            ),
           ),
-          Text('Result: $_scanBarcode\n'),
-        ],
+        ),
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            TextButton(
+              child: Text('Scan'),
+              onPressed: () => scanBarcode(),
+            ),
+            Text('Result: $_scanBarcode\n'),
+          ],
+        ),
       ),
     );
   }
