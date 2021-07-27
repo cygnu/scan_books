@@ -26,10 +26,13 @@ class ScanApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
 
-  final String _scanBarcode = 'Unknown';
+class _HomePageState extends State<HomePage> {
+  String _scanBarcode = 'Unknown';
 
   @override
   Widget build(BuildContext context) {
