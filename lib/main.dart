@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:provider/provider.dart';
 import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/models/google_books_response.dart';
 import 'package:scanner/views/main_view_model.dart';
