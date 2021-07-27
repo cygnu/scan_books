@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/views/main_view_model.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
@@ -14,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final TextEditingController _searchQuery = new TextEditingController();
   String _scanBarcode = 'Unknown';
 
   @override
@@ -45,21 +47,48 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: '検索',
               ),
               keyboardType: TextInputType.text,
-              onChanged: (String value) {
-                setState(() {
-                  print(value);
-                });
+              onChanged: () {
+                context.read(viewModel.notifier).fetch(_searchQuery.text);
               },
             ),
           ),
         ),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Text('Result: $_scanBarcode\n'),
-          ],
-        ),
+      body: Consumer(
+        builder: (context, watch, child) {
+          final state = watch(viewModel);
+
+          Widget body = Container();
+          if (state.viewModelState == MainViewModelState.loading) {
+            body = Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state.viewModelState == MainViewModelState.error) {
+            body = Center(
+              child: Text('エラーが発生しました。検索ワードを変えてお試しください'),
+            );
+          } else {
+            final response = state.response;
+            final List<GoogleBookResponse> bookList =
+                response != null ? response.items : [];
+
+            body = bookList.length > 0
+                ? ListView(
+                    children: bookList
+                        .map((book) => Card(
+                              child: ListTile(
+                                title: Text(
+                                  book.volumeInfo.title,
+                                ),
+                              ),
+                            ))
+                        .toList())
+                : Center(
+                    child: Text('検索結果は0件です'),
+                  );
+          }
+          return body;
+        },
       ),
     );
   }
