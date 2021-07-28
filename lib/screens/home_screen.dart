@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 hintText: '検索',
               ),
-              keyboardType: TextInputType.text,
               onSubmitted: (String text) {
                 context.read(viewModel.notifier).fetch(_searchQuery.text);
               },
@@ -73,18 +72,16 @@ class _HomeScreenState extends State<HomeScreen> {
             final List<GoogleBookResponse> bookList =
                 response != null ? response.items : [];
 
-            body = bookList.length > 0
-                ? ListView(
+            bookList.length > 0
+                ? body = ListView(
                     children: bookList
-                        .map((book) => Card(
-                              child: ListTile(
-                                title: Text(
-                                  book.volumeInfo.title,
-                                ),
+                        .map((book) => ListTile(
+                              title: Text(
+                                book.volumeInfo.title,
                               ),
                             ))
                         .toList())
-                : Center(
+                : body = Center(
                     child: Text('検索結果は0件です'),
                   );
           }
