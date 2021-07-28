@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Padding(
             padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
             child: TextField(
+              controller: _searchQuery,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: '検索',
               ),
               keyboardType: TextInputType.text,
-              onChanged: () {
+              onSubmitted: (String text) {
                 context.read(viewModel.notifier).fetch(_searchQuery.text);
               },
             ),
