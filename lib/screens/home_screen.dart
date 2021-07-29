@@ -73,27 +73,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 response != null ? response.items : [];
 
             bookList.length > 0
-                ? body = ListView(
-                    children: bookList
-                        .map((book) => ListTile(
-                              leading: book.volumeInfo.imageLinks != null
-                                  ? Image.network(
-                                      book.volumeInfo.imageLinks.thumbnail,
-                                    )
-                                  : Container(),
-                              title: Text(
-                                book.volumeInfo.title,
-                                maxLines: 2,
-                              ),
-                              subtitle: Text(
-                                book.volumeInfo.description != null
-                                    ? book.volumeInfo.description!
-                                    : '',
-                                maxLines: 2,
-                              ),
-                              onTap: () {},
-                            ))
-                        .toList())
+                ? body = ListView.separated(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    itemCount: response!.items.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var book = bookList[index];
+                      return ListTile(
+                        leading: book.volumeInfo.imageLinks != null
+                            ? Image.network(
+                                book.volumeInfo.imageLinks.thumbnail,
+                              )
+                            : Container(),
+                        title: Text(
+                          book.volumeInfo.title,
+                          maxLines: 2,
+                        ),
+                        subtitle: Text(
+                          book.volumeInfo.description != null
+                              ? book.volumeInfo.description!
+                              : '',
+                          maxLines: 2,
+                        ),
+                        onTap: () {},
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) =>
+                        Divider(height: 0.5))
                 : body = Center(
                     child: Text('検索結果は0件です'),
                   );
