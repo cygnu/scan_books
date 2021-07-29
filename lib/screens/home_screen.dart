@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:scanner/components/search_bar.dart';
 import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/views/main_view_model.dart';
 import 'package:scanner/views/main_view_model_data.dart';
@@ -15,43 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _searchQuery = new TextEditingController();
-  String _scanBarcode = 'Unknown';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: FlexibleSpaceBar(
-          title: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
-            child: TextField(
-              controller: _searchQuery,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 10.0, horizontal: 20.0),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  borderSide: const BorderSide(color: Colors.white),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  borderSide: const BorderSide(color: Colors.grey),
-                ),
-                filled: true,
-                fillColor: Colors.white,
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.photo_camera),
-                  onPressed: () => scanBarcode(),
-                ),
-                hintText: '検索',
-              ),
-              onSubmitted: (String text) {
-                context.read(viewModel.notifier).fetch(_searchQuery.text);
-              },
-            ),
-          ),
+          title: SearchBar(),
         ),
       ),
       body: Consumer(
@@ -107,22 +75,5 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
     );
-  }
-
-  Future<void> scanBarcode() async {
-    String barcodeScanRes;
-
-    try {
-      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666', 'Cancel', true, ScanMode.BARCODE);
-    } on PlatformException {
-      barcodeScanRes = 'Failed to get platform version.';
-    }
-
-    if (!mounted) return;
-
-    setState(() {
-      _scanBarcode = barcodeScanRes;
-    });
   }
 }
