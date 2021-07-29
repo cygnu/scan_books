@@ -17,8 +17,8 @@ Future<GoogleBooksResponse> booksSearch(String keyword) async {
   }
 }
 
-Future<GoogleBooksResponse> getBooksByISBN(int number) async {
-  var url = Uri.parse('$baseURL?q=isbn:$number');
+Future<GoogleBooksResponse> getBooksByISBN(String isbn) async {
+  var url = Uri.parse('$baseURL?q=isbn:$isbn');
   print(url);
 
   http.Response response = await http.get(url);

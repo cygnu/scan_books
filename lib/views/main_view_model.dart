@@ -17,10 +17,10 @@ class MainViewModel extends StateNotifier<MainViewModelData> {
     });
   }
 
-  void fetche(int number) {
+  void fetche(String isbn) {
     state = state.copyWith(viewModelState: MainViewModelState.loading);
 
-    getBooksByISBN(number).then((res) {
+    getBooksByISBN(isbn).then((res) {
       state = state.copyWith(
           response: res, viewModelState: MainViewModelState.normal);
     }).catchError((_) {
