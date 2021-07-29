@@ -76,9 +76,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? body = ListView(
                     children: bookList
                         .map((book) => ListTile(
+                              leading: book.volumeInfo.imageLinks != null
+                                  ? Image.network(
+                                      book.volumeInfo.imageLinks.thumbnail,
+                                    )
+                                  : Container(),
                               title: Text(
                                 book.volumeInfo.title,
+                                maxLines: 2,
                               ),
+                              subtitle: Text(
+                                book.volumeInfo.description != null
+                                    ? book.volumeInfo.description!
+                                    : '',
+                                maxLines: 2,
+                              ),
+                              onTap: () {},
                             ))
                         .toList())
                 : body = Center(
