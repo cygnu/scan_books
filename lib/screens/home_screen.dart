@@ -66,7 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>
-                        Divider(height: 0.5))
+                        Divider(height: 0.5),
+                  )
                 : body = Center(
                     child: Text('検索結果は0件です'),
                   );

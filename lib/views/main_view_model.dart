@@ -8,7 +8,19 @@ class MainViewModel extends StateNotifier<MainViewModelData> {
   void fetch(String keyword) {
     state = state.copyWith(viewModelState: MainViewModelState.loading);
 
-    getBooks(keyword).then((res) {
+    booksSearch(keyword).then((res) {
+      state = state.copyWith(
+          response: res, viewModelState: MainViewModelState.normal);
+    }).catchError((_) {
+      state = state.copyWith(
+          response: null, viewModelState: MainViewModelState.error);
+    });
+  }
+
+  void fetche(int number) {
+    state = state.copyWith(viewModelState: MainViewModelState.loading);
+
+    getBooksByISBN(number).then((res) {
       state = state.copyWith(
           response: res, viewModelState: MainViewModelState.normal);
     }).catchError((_) {
