@@ -36,7 +36,10 @@ class _SearchBarState extends State<SearchBar> {
           prefixIcon: Icon(Icons.search),
           suffixIcon: IconButton(
             icon: Icon(Icons.photo_camera),
-            onPressed: () => scanBarcode(),
+            onPressed: () {
+              scanBarcode();
+              context.read(viewModel.notifier).fetche(barcodeScan);
+            },
           ),
           hintText: '検索',
         ),
