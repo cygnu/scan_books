@@ -13,7 +13,6 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   final TextEditingController _searchQuery = new TextEditingController();
-  String barcodeScan = 'Unknown';
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +36,10 @@ class _SearchBarState extends State<SearchBar> {
           suffixIcon: IconButton(
             icon: Icon(Icons.photo_camera),
             onPressed: () {
-              scanBarcode();
-              context.read(viewModel.notifier).fetche(barcodeScan);
+              scanBarcode()
+                  .then(
+                      (value) => context.read(viewModel.notifier).fetche(value))
+                  .catchError((e) => {});
             },
           ),
           hintText: '検索',
@@ -50,7 +51,7 @@ class _SearchBarState extends State<SearchBar> {
     );
   }
 
-  Future<void> scanBarcode() async {
+  Future<String> scanBarcode() async {
     String barcodeScanRes;
 
     try {
@@ -60,10 +61,8 @@ class _SearchBarState extends State<SearchBar> {
       barcodeScanRes = 'Failed to get platform version.';
     }
 
-    if (!mounted) return;
+    if (!mounted) return '';
 
-    setState(() {
-      barcodeScan = barcodeScanRes;
-    });
+    return barcodeScanRes;
   }
 }
