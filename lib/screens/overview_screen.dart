@@ -31,6 +31,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           final response = state.response;
           final List<GoogleBookResponse> bookList =
               response != null ? response.items : [];
+          final _saved = Set<GoogleBookResponse>();
 
           bookList.length > 0
               ? body = ListView.separated(
@@ -38,11 +39,19 @@ class _OverviewScreenState extends State<OverviewScreen> {
                   itemCount: response!.items.length,
                   itemBuilder: (BuildContext context, int index) {
                     var book = bookList[index];
+                    final alreadySaved = _saved.contains(index);
+
                     return Dismissible(
                       key: Key(book.id!),
                       onDismissed: (direction) {
                         setState(() {
-                          bookList.removeAt(index);
+                          if (direction == DismissDirection.startToEnd) {
+                            bookList.removeAt(index);
+                          } else {
+                            alreadySaved
+                                ? bookList.removeAt(index)
+                                : _saved.add(book);
+                          }
                         });
                       },
                       background: Container(
