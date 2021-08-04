@@ -5,6 +5,8 @@ import 'package:scanner/navigation_navigator.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
 class OverviewScreen extends StatefulWidget {
+  static const route = 'overview_screen';
+
   @override
   _OverviewScreenState createState() => _OverviewScreenState();
 }
