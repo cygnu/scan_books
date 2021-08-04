@@ -8,12 +8,12 @@ import 'package:scanner/views/main_view_model_data.dart';
 final viewModel = StateNotifierProvider<MainViewModel, MainViewModelData>(
     (refs) => MainViewModel());
 
-class HomeScreen extends StatefulWidget {
+class NavigationNavigator extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _NavigationNavigatorState createState() => _NavigationNavigatorState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _NavigationNavigatorState extends State<NavigationNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

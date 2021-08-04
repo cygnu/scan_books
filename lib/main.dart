@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:scanner/screens/home_screen.dart';
+import 'package:scanner/navigation_navigator.dart';
 
 void main() => runApp(
       ProviderScope(
@@ -12,7 +12,7 @@ class ScanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      home: NavigationNavigator(),
     );
   }
 }
