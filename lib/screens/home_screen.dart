@@ -46,23 +46,55 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: response!.items.length,
                     itemBuilder: (BuildContext context, int index) {
                       var book = bookList[index];
-                      return ListTile(
-                        leading: book.volumeInfo.imageLinks != null
-                            ? Image.network(
-                                book.volumeInfo.imageLinks.thumbnail,
-                              )
-                            : Container(),
-                        title: Text(
-                          book.volumeInfo.title,
-                          maxLines: 2,
+                      return Dismissible(
+                        key: Key(book.id!),
+                        onDismissed: (direction) {
+                          setState(() {
+                            bookList.removeAt(index);
+                          });
+                        },
+                        background: Container(
+                          alignment: Alignment.centerLeft,
+                          color: Colors.red,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(
+                              'アーカイブ',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                         ),
-                        subtitle: Text(
-                          book.volumeInfo.description != null
-                              ? book.volumeInfo.description!
-                              : '',
-                          maxLines: 2,
+                        secondaryBackground: Container(
+                          alignment: Alignment.centerRight,
+                          color: Colors.blue,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Text(
+                              '登録',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                         ),
-                        onTap: () {},
+                        child: ListTile(
+                          leading: book.volumeInfo.imageLinks != null
+                              ? Image.network(
+                                  book.volumeInfo.imageLinks.thumbnail,
+                                )
+                              : Container(),
+                          title: Text(
+                            book.volumeInfo.title,
+                            maxLines: 2,
+                          ),
+                          subtitle: Text(
+                            book.volumeInfo.description != null
+                                ? book.volumeInfo.description!
+                                : '',
+                            maxLines: 2,
+                          ),
+                          onTap: () {},
+                        ),
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>
