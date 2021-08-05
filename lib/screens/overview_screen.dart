@@ -89,26 +89,28 @@ Widget _buildSuggestions(
             ),
           ),
         ),
-        child: ListTile(
-          leading: book.volumeInfo.imageLinks != null
-              ? Image.network(
-                  book.volumeInfo.imageLinks.thumbnail,
-                )
-              : Container(),
-          title: Text(
-            book.volumeInfo.title,
-            maxLines: 2,
-          ),
-          subtitle: Text(
-            book.volumeInfo.description != null
-                ? book.volumeInfo.description!
-                : '',
-            maxLines: 2,
-          ),
-          onTap: () {},
-        ),
+        child: _buildRow(book),
       );
     },
     separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
+  );
+}
+
+Widget _buildRow(GoogleBookResponse book) {
+  return ListTile(
+    leading: book.volumeInfo.imageLinks != null
+        ? Image.network(
+            book.volumeInfo.imageLinks.thumbnail,
+          )
+        : Container(),
+    title: Text(
+      book.volumeInfo.title,
+      maxLines: 2,
+    ),
+    subtitle: Text(
+      book.volumeInfo.description != null ? book.volumeInfo.description! : '',
+      maxLines: 2,
+    ),
+    onTap: () {},
   );
 }
