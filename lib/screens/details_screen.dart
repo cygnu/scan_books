@@ -10,12 +10,15 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(book.volumeInfo.title),
+      ),
       body: Container(
         child: Column(
           children: [
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 45.0),
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               child: Container(
                 height: MediaQuery.of(context).size.height / 1.5,
                 width: MediaQuery.of(context).size.width,
