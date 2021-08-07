@@ -38,10 +38,30 @@ class DetailsScreen extends StatelessWidget {
                   children: [
                     Text(
                       book.volumeInfo.title,
+                      maxLines: 2,
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Material(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.blue,
+                          child: MaterialButton(
+                            onPressed: () {},
+                            child: Text(
+                              'More at web',
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
