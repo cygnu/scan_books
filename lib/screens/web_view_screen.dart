@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WebViewScreen extends StatefulWidget {
+  static const route = 'web_view_screen';
+
   @override
   _WebViewScreenState createState() => _WebViewScreenState();
 }

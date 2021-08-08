@@ -5,6 +5,7 @@ import 'package:scanner/navigation_navigator.dart';
 import 'package:scanner/screens/bookmarks_screen.dart';
 import 'package:scanner/screens/details_screen.dart';
 import 'package:scanner/screens/overview_screen.dart';
+import 'package:scanner/screens/web_view_screen.dart';
 
 void main() => runApp(
       ProviderScope(
@@ -22,9 +23,8 @@ class ScanApp extends StatelessWidget {
       routes: {
         '/': (context) => NavigationNavigator(),
         OverviewScreen.route: (context) => OverviewScreen(),
-        DetailsScreen.route: (context) => DetailsScreen(
-              book: book,
-            ),
+        DetailsScreen.route: (context) => DetailsScreen(book: book),
+        WebViewScreen.route: (context) => WebViewScreen(),
         BookmarksScreen.route: (context) => BookmarksScreen(),
       },
     );
