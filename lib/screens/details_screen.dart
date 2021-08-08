@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scanner/models/google_book_response.dart';
+import 'package:scanner/screens/web_view_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
   static const route = 'details_screen';
@@ -54,11 +55,18 @@ class DetailsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                           color: Colors.blue,
                           child: MaterialButton(
-                            onPressed: () {},
                             child: Text(
                               'More at web',
                               style: const TextStyle(color: Colors.white),
                             ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WebViewScreen(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ],
