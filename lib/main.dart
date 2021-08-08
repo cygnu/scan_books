@@ -24,7 +24,7 @@ class ScanApp extends StatelessWidget {
         '/': (context) => NavigationNavigator(),
         OverviewScreen.route: (context) => OverviewScreen(),
         DetailsScreen.route: (context) => DetailsScreen(book: book),
-        WebViewScreen.route: (context) => WebViewScreen(),
+        WebViewScreen.route: (context) => WebViewScreen(book: book),
         BookmarksScreen.route: (context) => BookmarksScreen(),
       },
     );

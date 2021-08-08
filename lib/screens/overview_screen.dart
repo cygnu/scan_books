@@ -116,9 +116,7 @@ Widget _buildRow(GoogleBookResponse book, BuildContext context) {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailsScreen(
-            book: book,
-          ),
+          builder: (context) => DetailsScreen(book: book),
         ),
       );
     },
