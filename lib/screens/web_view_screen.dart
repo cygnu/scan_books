@@ -13,6 +13,8 @@ class WebViewScreen extends StatefulWidget {
 }
 
 class _WebViewScreenState extends State<WebViewScreen> {
+  bool _isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +24,21 @@ class _WebViewScreenState extends State<WebViewScreen> {
       body: Container(
         child: Column(
           children: [
+            if (_isLoading) const LinearProgressIndicator(),
             Expanded(
               child: WebView(
                 initialUrl: widget.book.volumeInfo.infoLink,
+                javascriptMode: JavascriptMode.unrestricted,
+                onPageStarted: (String url) {
+                  setState(() {
+                    _isLoading = true;
+                  });
+                },
+                onPageFinished: (String url) {
+                  setState(() {
+                    _isLoading = false;
+                  });
+                },
               ),
             ),
           ],
