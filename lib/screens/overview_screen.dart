@@ -99,11 +99,9 @@ Widget _buildSuggestions(
 
 Widget _buildRow(GoogleBookResponse book, BuildContext context) {
   return ListTile(
-    leading: book.volumeInfo.imageLinks != null
-        ? Image.network(
-            book.volumeInfo.imageLinks.thumbnail,
-          )
-        : Container(),
+    leading: Image.network(
+      book.volumeInfo.imageLinks!.thumbnail!,
+    ),
     title: Text(
       book.volumeInfo.title,
       maxLines: 2,

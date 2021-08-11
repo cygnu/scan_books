@@ -26,7 +26,8 @@ class DetailsScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(book.volumeInfo.imageLinks.thumbnail),
+                      image:
+                          NetworkImage(book.volumeInfo.imageLinks!.thumbnail!),
                       fit: BoxFit.fitHeight,
                     ),
                   ),
