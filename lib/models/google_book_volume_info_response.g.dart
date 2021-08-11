@@ -18,8 +18,10 @@ _$_GoogleBookVolumeInfoResponse _$_$_GoogleBookVolumeInfoResponseFromJson(
             e as Map<String, dynamic>))
         .toList(),
     pageCount: json['pageCount'] as int?,
-    imageLinks: GoogleBookImageLinksResponse.fromJson(
-        json['imageLinks'] as Map<String, dynamic>),
+    imageLinks: json['imageLinks'] == null
+        ? null
+        : GoogleBookImageLinksResponse.fromJson(
+            json['imageLinks'] as Map<String, dynamic>),
     infoLink: json['infoLink'] as String?,
   );
 }

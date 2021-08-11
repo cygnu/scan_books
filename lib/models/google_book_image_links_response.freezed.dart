@@ -22,7 +22,7 @@ class _$GoogleBookImageLinksResponseTearOff {
   const _$GoogleBookImageLinksResponseTearOff();
 
   _GoogleBookImageLinksResponse call(
-      {required String smallThumbnail, required String thumbnail}) {
+      {String? smallThumbnail, String? thumbnail}) {
     return _GoogleBookImageLinksResponse(
       smallThumbnail: smallThumbnail,
       thumbnail: thumbnail,
@@ -39,8 +39,8 @@ const $GoogleBookImageLinksResponse = _$GoogleBookImageLinksResponseTearOff();
 
 /// @nodoc
 mixin _$GoogleBookImageLinksResponse {
-  String get smallThumbnail => throw _privateConstructorUsedError;
-  String get thumbnail => throw _privateConstructorUsedError;
+  String? get smallThumbnail => throw _privateConstructorUsedError;
+  String? get thumbnail => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +54,7 @@ abstract class $GoogleBookImageLinksResponseCopyWith<$Res> {
           GoogleBookImageLinksResponse value,
           $Res Function(GoogleBookImageLinksResponse) then) =
       _$GoogleBookImageLinksResponseCopyWithImpl<$Res>;
-  $Res call({String smallThumbnail, String thumbnail});
+  $Res call({String? smallThumbnail, String? thumbnail});
 }
 
 /// @nodoc
@@ -75,11 +75,11 @@ class _$GoogleBookImageLinksResponseCopyWithImpl<$Res>
       smallThumbnail: smallThumbnail == freezed
           ? _value.smallThumbnail
           : smallThumbnail // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -92,7 +92,7 @@ abstract class _$GoogleBookImageLinksResponseCopyWith<$Res>
           $Res Function(_GoogleBookImageLinksResponse) then) =
       __$GoogleBookImageLinksResponseCopyWithImpl<$Res>;
   @override
-  $Res call({String smallThumbnail, String thumbnail});
+  $Res call({String? smallThumbnail, String? thumbnail});
 }
 
 /// @nodoc
@@ -117,11 +117,11 @@ class __$GoogleBookImageLinksResponseCopyWithImpl<$Res>
       smallThumbnail: smallThumbnail == freezed
           ? _value.smallThumbnail
           : smallThumbnail // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       thumbnail: thumbnail == freezed
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -130,17 +130,16 @@ class __$GoogleBookImageLinksResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GoogleBookImageLinksResponse extends _GoogleBookImageLinksResponse
     with DiagnosticableTreeMixin {
-  const _$_GoogleBookImageLinksResponse(
-      {required this.smallThumbnail, required this.thumbnail})
+  const _$_GoogleBookImageLinksResponse({this.smallThumbnail, this.thumbnail})
       : super._();
 
   factory _$_GoogleBookImageLinksResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GoogleBookImageLinksResponseFromJson(json);
 
   @override
-  final String smallThumbnail;
+  final String? smallThumbnail;
   @override
-  final String thumbnail;
+  final String? thumbnail;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -189,17 +188,17 @@ class _$_GoogleBookImageLinksResponse extends _GoogleBookImageLinksResponse
 abstract class _GoogleBookImageLinksResponse
     extends GoogleBookImageLinksResponse {
   const factory _GoogleBookImageLinksResponse(
-      {required String smallThumbnail,
-      required String thumbnail}) = _$_GoogleBookImageLinksResponse;
+      {String? smallThumbnail,
+      String? thumbnail}) = _$_GoogleBookImageLinksResponse;
   const _GoogleBookImageLinksResponse._() : super._();
 
   factory _GoogleBookImageLinksResponse.fromJson(Map<String, dynamic> json) =
       _$_GoogleBookImageLinksResponse.fromJson;
 
   @override
-  String get smallThumbnail => throw _privateConstructorUsedError;
+  String? get smallThumbnail => throw _privateConstructorUsedError;
   @override
-  String get thumbnail => throw _privateConstructorUsedError;
+  String? get thumbnail => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$GoogleBookImageLinksResponseCopyWith<_GoogleBookImageLinksResponse>

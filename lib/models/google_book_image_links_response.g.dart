@@ -9,8 +9,8 @@ part of 'google_book_image_links_response.dart';
 _$_GoogleBookImageLinksResponse _$_$_GoogleBookImageLinksResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GoogleBookImageLinksResponse(
-    smallThumbnail: json['smallThumbnail'] as String,
-    thumbnail: json['thumbnail'] as String,
+    smallThumbnail: json['smallThumbnail'] as String?,
+    thumbnail: json['thumbnail'] as String?,
   );
 }
 

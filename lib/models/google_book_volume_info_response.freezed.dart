@@ -28,7 +28,7 @@ class _$GoogleBookVolumeInfoResponseTearOff {
       String? description,
       required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
       int? pageCount,
-      required GoogleBookImageLinksResponse imageLinks,
+      GoogleBookImageLinksResponse? imageLinks,
       String? infoLink}) {
     return _GoogleBookVolumeInfoResponse(
       title: title,
@@ -59,7 +59,7 @@ mixin _$GoogleBookVolumeInfoResponse {
   List<GoogleBookIndustryIdentifiersResponse> get industryIdentifiers =>
       throw _privateConstructorUsedError;
   int? get pageCount => throw _privateConstructorUsedError;
-  GoogleBookImageLinksResponse get imageLinks =>
+  GoogleBookImageLinksResponse? get imageLinks =>
       throw _privateConstructorUsedError;
   String? get infoLink => throw _privateConstructorUsedError;
 
@@ -82,10 +82,10 @@ abstract class $GoogleBookVolumeInfoResponseCopyWith<$Res> {
       String? description,
       List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
       int? pageCount,
-      GoogleBookImageLinksResponse imageLinks,
+      GoogleBookImageLinksResponse? imageLinks,
       String? infoLink});
 
-  $GoogleBookImageLinksResponseCopyWith<$Res> get imageLinks;
+  $GoogleBookImageLinksResponseCopyWith<$Res>? get imageLinks;
 }
 
 /// @nodoc
@@ -136,7 +136,7 @@ class _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       imageLinks: imageLinks == freezed
           ? _value.imageLinks
           : imageLinks // ignore: cast_nullable_to_non_nullable
-              as GoogleBookImageLinksResponse,
+              as GoogleBookImageLinksResponse?,
       infoLink: infoLink == freezed
           ? _value.infoLink
           : infoLink // ignore: cast_nullable_to_non_nullable
@@ -145,8 +145,12 @@ class _$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
   }
 
   @override
-  $GoogleBookImageLinksResponseCopyWith<$Res> get imageLinks {
-    return $GoogleBookImageLinksResponseCopyWith<$Res>(_value.imageLinks,
+  $GoogleBookImageLinksResponseCopyWith<$Res>? get imageLinks {
+    if (_value.imageLinks == null) {
+      return null;
+    }
+
+    return $GoogleBookImageLinksResponseCopyWith<$Res>(_value.imageLinks!,
         (value) {
       return _then(_value.copyWith(imageLinks: value));
     });
@@ -168,11 +172,11 @@ abstract class _$GoogleBookVolumeInfoResponseCopyWith<$Res>
       String? description,
       List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
       int? pageCount,
-      GoogleBookImageLinksResponse imageLinks,
+      GoogleBookImageLinksResponse? imageLinks,
       String? infoLink});
 
   @override
-  $GoogleBookImageLinksResponseCopyWith<$Res> get imageLinks;
+  $GoogleBookImageLinksResponseCopyWith<$Res>? get imageLinks;
 }
 
 /// @nodoc
@@ -227,7 +231,7 @@ class __$GoogleBookVolumeInfoResponseCopyWithImpl<$Res>
       imageLinks: imageLinks == freezed
           ? _value.imageLinks
           : imageLinks // ignore: cast_nullable_to_non_nullable
-              as GoogleBookImageLinksResponse,
+              as GoogleBookImageLinksResponse?,
       infoLink: infoLink == freezed
           ? _value.infoLink
           : infoLink // ignore: cast_nullable_to_non_nullable
@@ -247,7 +251,7 @@ class _$_GoogleBookVolumeInfoResponse extends _GoogleBookVolumeInfoResponse
       this.description,
       required this.industryIdentifiers,
       this.pageCount,
-      required this.imageLinks,
+      this.imageLinks,
       this.infoLink})
       : super._();
 
@@ -267,7 +271,7 @@ class _$_GoogleBookVolumeInfoResponse extends _GoogleBookVolumeInfoResponse
   @override
   final int? pageCount;
   @override
-  final GoogleBookImageLinksResponse imageLinks;
+  final GoogleBookImageLinksResponse? imageLinks;
   @override
   final String? infoLink;
 
@@ -353,7 +357,7 @@ abstract class _GoogleBookVolumeInfoResponse
       String? description,
       required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
       int? pageCount,
-      required GoogleBookImageLinksResponse imageLinks,
+      GoogleBookImageLinksResponse? imageLinks,
       String? infoLink}) = _$_GoogleBookVolumeInfoResponse;
   const _GoogleBookVolumeInfoResponse._() : super._();
 
@@ -374,7 +378,7 @@ abstract class _GoogleBookVolumeInfoResponse
   @override
   int? get pageCount => throw _privateConstructorUsedError;
   @override
-  GoogleBookImageLinksResponse get imageLinks =>
+  GoogleBookImageLinksResponse? get imageLinks =>
       throw _privateConstructorUsedError;
   @override
   String? get infoLink => throw _privateConstructorUsedError;
