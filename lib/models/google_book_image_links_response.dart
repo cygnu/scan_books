@@ -8,8 +8,8 @@ part 'google_book_image_links_response.g.dart';
 class GoogleBookImageLinksResponse with _$GoogleBookImageLinksResponse {
   const GoogleBookImageLinksResponse._();
   const factory GoogleBookImageLinksResponse({
-    required String smallThumbnail,
-    required String thumbnail,
+    String? smallThumbnail,
+    String? thumbnail,
   }) = _GoogleBookImageLinksResponse;
   factory GoogleBookImageLinksResponse.fromJson(Map<String, dynamic> json) =>
       _$GoogleBookImageLinksResponseFromJson(json);

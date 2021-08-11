@@ -16,7 +16,7 @@ class GoogleBookVolumeInfoResponse with _$GoogleBookVolumeInfoResponse {
     String? description,
     required List<GoogleBookIndustryIdentifiersResponse> industryIdentifiers,
     int? pageCount,
-    required GoogleBookImageLinksResponse imageLinks,
+    GoogleBookImageLinksResponse? imageLinks,
     String? infoLink,
   }) = _GoogleBookVolumeInfoResponse;
   factory GoogleBookVolumeInfoResponse.fromJson(Map<String, dynamic> json) =>
