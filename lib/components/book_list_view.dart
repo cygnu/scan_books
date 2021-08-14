@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:scanner/components/book_item.dart';
+import 'package:scanner/models/google_book_response.dart';
+import 'package:scanner/models/google_books_response.dart';
 
 class BookListView extends StatelessWidget {
-  const BookListView({Key? key}) : super(key: key);
+  BookListView({
+    Key? key,
+    required this.response,
+    required this.bookList,
+  }) : super(key: key);
+
+  final GoogleBooksResponse? response;
+  final List<GoogleBookResponse> bookList;
+  final _saved = Set<GoogleBookResponse>();
 
   @override
   Widget build(BuildContext context) {
