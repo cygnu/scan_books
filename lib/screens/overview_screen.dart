@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:scanner/components/book_item.dart';
 import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/models/google_books_response.dart';
 import 'package:scanner/navigation_navigator.dart';
-import 'package:scanner/screens/details_screen.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -90,33 +90,9 @@ Widget _buildSuggestions(
             ),
           ),
         ),
-        child: _buildRow(book, context),
+        child: BookItem(book: book),
       );
     },
     separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
-  );
-}
-
-Widget _buildRow(GoogleBookResponse book, BuildContext context) {
-  return ListTile(
-    leading: Image.network(
-      book.volumeInfo.imageLinks!.thumbnail!,
-    ),
-    title: Text(
-      book.volumeInfo.title,
-      maxLines: 2,
-    ),
-    subtitle: Text(
-      book.volumeInfo.description != null ? book.volumeInfo.description! : '',
-      maxLines: 2,
-    ),
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => DetailsScreen(book: book),
-        ),
-      );
-    },
   );
 }
