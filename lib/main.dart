@@ -6,12 +6,17 @@ import 'package:scanner/screens/bookmarks_screen.dart';
 import 'package:scanner/screens/details_screen.dart';
 import 'package:scanner/screens/overview_screen.dart';
 import 'package:scanner/screens/web_view_screen.dart';
+import 'package:scanner/views/main_view_model.dart';
+import 'package:scanner/views/main_view_model_data.dart';
 
 void main() => runApp(
       ProviderScope(
         child: ScanApp(),
       ),
     );
+
+final viewModel = StateNotifierProvider<MainViewModel, MainViewModelData>(
+    (refs) => MainViewModel());
 
 class ScanApp extends StatelessWidget {
   late final GoogleBookResponse book;

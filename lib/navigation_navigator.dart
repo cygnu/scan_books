@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/search_bar.dart';
 import 'package:scanner/screens/bookmarks_screen.dart';
 import 'package:scanner/screens/overview_screen.dart';
-import 'package:scanner/views/main_view_model.dart';
-import 'package:scanner/views/main_view_model_data.dart';
-
-final viewModel = StateNotifierProvider<MainViewModel, MainViewModelData>(
-    (refs) => MainViewModel());
 
 class NavigationNavigator extends StatefulWidget {
   @override
