@@ -18,6 +18,8 @@ void main() => runApp(
 final viewModel = StateNotifierProvider<MainViewModel, MainViewModelData>(
     (refs) => MainViewModel());
 
+final bookListProvider = StateProvider((refs) => <GoogleBookResponse>[]);
+
 class ScanApp extends StatelessWidget {
   late final GoogleBookResponse book;
 
