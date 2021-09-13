@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/book_list_view.dart';
 import 'package:scanner/main.dart';
-import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -30,8 +29,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           );
         } else {
           final response = state.response;
-          final List<GoogleBookResponse> bookList =
-              response != null ? response.items : [];
+          final bookList = watch(bookListProvider).state;
 
           bookList.length > 0
               ? body = BookListView(response: response, bookList: bookList)
