@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/book_item.dart';
+import 'package:scanner/main.dart';
 import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/models/google_books_response.dart';
 
-class BookListView extends StatelessWidget {
+class BookListView extends ConsumerWidget {
   BookListView({
     Key? key,
     required this.response,
@@ -12,16 +14,17 @@ class BookListView extends StatelessWidget {
 
   final GoogleBooksResponse? response;
   final List<GoogleBookResponse> bookList;
-  final _saved = Set<GoogleBookResponse>();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
+    final saved = watch(savedProvider).state;
+
     return ListView.separated(
       padding: EdgeInsets.symmetric(vertical: 10.0),
       itemCount: response!.items.length,
       itemBuilder: (BuildContext context, int index) {
         final book = bookList[index];
-        final alreadySaved = _saved.contains(index);
+        final alreadySaved = saved.contains(index);
 
         return Dismissible(
           key: Key(book.id!),
@@ -29,7 +32,7 @@ class BookListView extends StatelessWidget {
             if (direction == DismissDirection.startToEnd) {
               bookList.removeAt(index);
             } else {
-              alreadySaved ? bookList.removeAt(index) : _saved.add(book);
+              alreadySaved ? bookList.removeAt(index) : saved.add(book);
             }
           },
           background: Container(
