@@ -4,7 +4,7 @@ import 'package:scanner/models/google_books_response.dart';
 
 part 'main_view_model_data.freezed.dart';
 
-enum MainViewModelState { normal, loading, error }
+enum MainViewModelState { loading, error, normal }
 
 @freezed
 class MainViewModelData with _$MainViewModelData {
