@@ -30,7 +30,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
         } else {
           final bookList = state.response!.items;
 
-          bookList.length > 0
+          bookList.isNotEmpty
               ? body = BookListView(bookList: bookList)
               : body = Center(
                   child: Text('検索結果は0件です'),
