@@ -28,11 +28,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: Text('エラーが発生しました。検索ワードを変えてお試しください'),
           );
         } else {
-          final response = state.response;
           final bookList = watch(bookListProvider).state;
 
           bookList.length > 0
-              ? body = BookListView(response: response, bookList: bookList)
+              ? body = BookListView(bookList: bookList)
               : body = Center(
                   child: Text('検索結果は0件です'),
                 );

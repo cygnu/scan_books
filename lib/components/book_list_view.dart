@@ -3,16 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/book_item.dart';
 import 'package:scanner/main.dart';
 import 'package:scanner/models/google_book_response.dart';
-import 'package:scanner/models/google_books_response.dart';
 
 class BookListView extends ConsumerWidget {
   BookListView({
     Key? key,
-    required this.response,
     required this.bookList,
   }) : super(key: key);
 
-  final GoogleBooksResponse? response;
   final List<GoogleBookResponse> bookList;
 
   @override
@@ -21,7 +18,7 @@ class BookListView extends ConsumerWidget {
 
     return ListView.separated(
       padding: EdgeInsets.symmetric(vertical: 10.0),
-      itemCount: response!.items.length,
+      itemCount: bookList.length,
       itemBuilder: (BuildContext context, int index) {
         final book = bookList[index];
         final alreadySaved = saved.contains(index);
