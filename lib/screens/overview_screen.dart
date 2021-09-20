@@ -28,7 +28,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: Text('エラーが発生しました。検索ワードを変えてお試しください'),
           );
         } else {
-          final bookList = watch(bookListProvider).state;
+          final bookList = state.response!.items;
 
           bookList.length > 0
               ? body = BookListView(bookList: bookList)
