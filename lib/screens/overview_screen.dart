@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/book_list_view.dart';
 import 'package:scanner/main.dart';
+import 'package:scanner/models/google_book_response.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -28,7 +29,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: Text('エラーが発生しました。検索ワードを変えてお試しください'),
           );
         } else {
-          final bookList = state.response!.items;
+          final List<GoogleBookResponse> bookList =
+              state.response != null ? state.response!.items : [];
 
           bookList.isNotEmpty
               ? body = BookListView(bookList: bookList)
