@@ -9,17 +9,16 @@ class BookmarksScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(viewModel);
-    final List<GoogleBookResponse> bookList =
-        state.response != null ? state.response!.items : [];
+    final List<GoogleBookResponse> savedList =
+        watch(savedProvider) as List<GoogleBookResponse>;
 
     return Scaffold(
       body: Container(
         child: ListView.separated(
           padding: EdgeInsets.symmetric(vertical: 10.0),
-          itemCount: state.response!.items.length,
+          itemCount: savedList.length,
           itemBuilder: (BuildContext context, int index) {
-            final book = bookList[index];
+            final book = savedList[index];
 
             return BookItem(book: book);
           },
