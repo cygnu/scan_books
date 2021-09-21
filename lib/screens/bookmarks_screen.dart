@@ -20,7 +20,11 @@ class BookmarksScreen extends ConsumerWidget {
           itemBuilder: (BuildContext context, int index) {
             final book = savedList[index];
 
-            return BookItem(book: book);
+            return savedList.isNotEmpty
+                ? BookItem(book: book)
+                : Center(
+                    child: Text('リストへの登録がまだありません'),
+                  );
           },
           separatorBuilder: (BuildContext context, int index) =>
               Divider(height: 0.5),
