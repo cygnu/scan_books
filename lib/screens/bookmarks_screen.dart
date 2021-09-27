@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/components/book_item.dart';
 import 'package:scanner/main.dart';
-import 'package:scanner/models/google_book_response.dart';
 
 class BookmarksScreen extends ConsumerWidget {
   static const route = 'bookmarks_screen';
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final List<GoogleBookResponse> savedList =
-        watch(savedProvider) as List<GoogleBookResponse>;
+    var savedSet = watch(savedProvider).state;
+    var savedList = savedSet.toList();
 
     return Scaffold(
       body: Container(
