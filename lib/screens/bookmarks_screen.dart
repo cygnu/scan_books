@@ -8,8 +8,7 @@ class BookmarksScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    var savedSet = watch(savedProvider).state;
-    var savedList = savedSet.toList();
+    var savedList = watch(savedProvider).state.toList();
 
     return Scaffold(
       body: Container(

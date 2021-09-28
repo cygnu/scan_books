@@ -14,19 +14,19 @@ class BookListView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final saved = watch(savedProvider).state;
+    var savedSet = watch(savedProvider).state;
 
     return ListView.separated(
       padding: EdgeInsets.symmetric(vertical: 10.0),
       itemCount: bookList.length,
       itemBuilder: (BuildContext context, int index) {
         final book = bookList[index];
-        final alreadySaved = saved.contains(index);
+        final alreadySaved = savedSet.contains(index);
 
         return Dismissible(
           key: Key(book.id!),
           onDismissed: (direction) {
-            alreadySaved ? saved.remove(book) : saved.add(book);
+            alreadySaved ? savedSet.remove(book) : savedSet.add(book);
           },
           background: Container(
             alignment: Alignment.centerRight,
