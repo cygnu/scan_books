@@ -29,11 +29,11 @@ class _OverviewScreenState extends State<OverviewScreen> {
             child: Text('エラーが発生しました。検索ワードを変えてお試しください'),
           );
         } else {
-          final List<GoogleBookResponse> bookList =
+          final List<GoogleBookResponse> searchResultList =
               state.response != null ? state.response!.items : [];
 
-          bookList.isNotEmpty
-              ? body = BookListView(bookList: bookList)
+          searchResultList.isNotEmpty
+              ? body = BookListView(bookList: searchResultList)
               : body = Center(
                   child: Text('検索結果は0件です'),
                 );
