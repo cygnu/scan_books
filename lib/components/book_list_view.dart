@@ -26,24 +26,9 @@ class BookListView extends ConsumerWidget {
         return Dismissible(
           key: Key(book.id!),
           onDismissed: (direction) {
-            if (direction == DismissDirection.startToEnd) {
-              bookList.removeAt(index);
-            } else {
-              alreadySaved ? bookList.removeAt(index) : saved.add(book);
-            }
+            alreadySaved ? saved.remove(book) : saved.add(book);
           },
           background: Container(
-            alignment: Alignment.centerLeft,
-            color: Colors.red,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text(
-                'アーカイブ',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          secondaryBackground: Container(
             alignment: Alignment.centerRight,
             color: Colors.blue,
             child: Padding(
