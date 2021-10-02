@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scanner/models/google_book_response.dart';
@@ -9,11 +10,15 @@ import 'package:scanner/screens/web_view_screen.dart';
 import 'package:scanner/views/main_view_model.dart';
 import 'package:scanner/views/main_view_model_data.dart';
 
-void main() => runApp(
-      ProviderScope(
-        child: ScanApp(),
-      ),
-    );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(
+    ProviderScope(
+      child: ScanApp(),
+    ),
+  );
+}
 
 final viewModel = StateNotifierProvider<MainViewModel, MainViewModelData>(
     (refs) => MainViewModel());
