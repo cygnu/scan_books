@@ -1,4 +1,4 @@
-# scanner
+# scan_books
 
 A new Flutter project.
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:scanner/components/book_list_view.dart';
-import 'package:scanner/main.dart';
-import 'package:scanner/models/google_book_response.dart';
-import 'package:scanner/views/main_view_model_data.dart';
+import 'package:scan_books/components/book_list_view.dart';
+import 'package:scan_books/main.dart';
+import 'package:scan_books/models/google_book_response.dart';
+import 'package:scan_books/views/main_view_model_data.dart';
 
 class OverviewScreen extends StatefulWidget {
   static const route = 'overview_screen';

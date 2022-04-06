@@ -1,5 +1,5 @@
-import 'package:scanner/models/google_books_api_service.dart';
-import 'package:scanner/views/main_view_model_data.dart';
+import 'package:scan_books/models/google_books_api_service.dart';
+import 'package:scan_books/views/main_view_model_data.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 class MainViewModel extends StateNotifier<MainViewModelData> {

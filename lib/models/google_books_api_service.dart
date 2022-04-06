@@ -1,7 +1,7 @@
 import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
-import 'package:scanner/models/google_books_response.dart';
+import 'package:scan_books/models/google_books_response.dart';
 
 const baseURL = 'https://www.googleapis.com/books/v1/volumes';
 

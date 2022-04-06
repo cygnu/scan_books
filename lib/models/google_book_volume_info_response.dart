@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:scanner/models/google_book_image_links_response.dart';
-import 'package:scanner/models/google_book_industry_identifiers_response.dart';
+import 'package:scan_books/models/google_book_image_links_response.dart';
+import 'package:scan_books/models/google_book_industry_identifiers_response.dart';
 
 part 'google_book_volume_info_response.freezed.dart';
 part 'google_book_volume_info_response.g.dart';

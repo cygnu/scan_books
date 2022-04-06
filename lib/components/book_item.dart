@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scanner/models/google_book_response.dart';
-import 'package:scanner/screens/details_screen.dart';
+import 'package:scan_books/models/google_book_response.dart';
+import 'package:scan_books/screens/details_screen.dart';
 
 class BookItem extends StatelessWidget {
   const BookItem({Key? key, required this.book}) : super(key: key);

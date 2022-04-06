@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:scanner/components/book_list_view.dart';
-import 'package:scanner/main.dart';
+import 'package:scan_books/components/book_list_view.dart';
+import 'package:scan_books/main.dart';
 
 class BookmarksScreen extends ConsumerWidget {
   static const route = 'bookmarks_screen';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scanner/models/google_book_response.dart';
-import 'package:scanner/screens/web_view_screen.dart';
+import 'package:scan_books/models/google_book_response.dart';
+import 'package:scan_books/screens/web_view_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
   static const route = 'details_screen';

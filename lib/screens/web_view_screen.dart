@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scanner/models/google_book_response.dart';
+import 'package:scan_books/models/google_book_response.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewScreen extends StatefulWidget {

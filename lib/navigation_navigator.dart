@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scanner/components/search_bar.dart';
-import 'package:scanner/screens/bookmarks_screen.dart';
-import 'package:scanner/screens/overview_screen.dart';
+import 'package:scan_books/components/search_bar.dart';
+import 'package:scan_books/screens/bookmarks_screen.dart';
+import 'package:scan_books/screens/overview_screen.dart';
 
 class NavigationNavigator extends StatefulWidget {
   @override

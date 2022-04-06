@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/scanner.iml" filepath="$PROJECT_DIR$/scanner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/scanner_android.iml" filepath="$PROJECT_DIR$/android/scanner_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/scan_books.iml" filepath="$PROJECT_DIR$/.idea/scan_books.iml" />
     </modules>
   </component>
 </project>

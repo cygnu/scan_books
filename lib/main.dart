@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:scanner/models/google_book_response.dart';
-import 'package:scanner/navigation_navigator.dart';
-import 'package:scanner/screens/bookmarks_screen.dart';
-import 'package:scanner/screens/details_screen.dart';
-import 'package:scanner/screens/overview_screen.dart';
-import 'package:scanner/screens/web_view_screen.dart';
-import 'package:scanner/views/main_view_model.dart';
-import 'package:scanner/views/main_view_model_data.dart';
+import 'package:scan_books/models/google_book_response.dart';
+import 'package:scan_books/navigation_navigator.dart';
+import 'package:scan_books/screens/bookmarks_screen.dart';
+import 'package:scan_books/screens/details_screen.dart';
+import 'package:scan_books/screens/overview_screen.dart';
+import 'package:scan_books/screens/web_view_screen.dart';
+import 'package:scan_books/views/main_view_model.dart';
+import 'package:scan_books/views/main_view_model_data.dart';
 
 void main() => runApp(
       ProviderScope(
