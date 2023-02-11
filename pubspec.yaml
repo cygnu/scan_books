@@ -12,8 +12,8 @@ dependencies:
     sdk: flutter
 
 
+  barcode_scan2: ^4.2.3
   cupertino_icons: ^1.0.2
-  flutter_barcode_scanner: ^2.0.0
   flutter_riverpod: ^0.14.0+1
   freezed_annotation: ^0.14.2
   http: ^0.13.3
