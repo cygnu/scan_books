@@ -1,6 +1,7 @@
+import 'package:barcode_scan2/gen/protos/protos.pb.dart';
+import 'package:barcode_scan2/platform_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scan_books/main.dart';
 
@@ -52,17 +53,17 @@ class _SearchBarState extends State<SearchBar> {
   }
 
   Future<String> scanBarcode() async {
-    String barcodeScanRes;
+    ScanResult scanResult;
 
     try {
-      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666', 'Cancel', true, ScanMode.BARCODE);
+      scanResult = (await BarcodeScanner.scan()) as ScanResult;
     } on PlatformException {
-      barcodeScanRes = 'Failed to get platform version.';
+      scanResult = ScanResult(
+        type: ResultType.Error,
+        format: BarcodeFormat.unknown,
+      );
     }
 
-    if (!mounted) return '';
-
-    return barcodeScanRes;
+    return scanResult.rawContent;
   }
 }
