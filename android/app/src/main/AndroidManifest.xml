@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scan_books">
+    package="com.cygnu.scan_books">
    <uses-permission android:name="android.permission.CAMERA" />
    <application
         android:label="scan_books"
